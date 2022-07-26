@@ -12,11 +12,6 @@ use Illuminate\Routing\Redirector;
 class EventController extends Controller
 {
 
-    public function index(): void
-    {
-//        echo view('events');
-    }
-
     public function create(Request $request)
     {
         $validated = $request->validate([
@@ -47,11 +42,6 @@ class EventController extends Controller
     public function show(Event $event)
     {
         echo view('pages.events.form', $event);
-    }
-
-    public function edit(Event $event)
-    {
-        //
     }
 
     public function update(Request $request, Event $event)

@@ -15,16 +15,16 @@
             </div>
 
             <div class="flex bg-gray-200 text-xs leading-6 text-gray-700 lg:flex-auto">
-                <div class="hidden w-full lg:grid lg:grid-cols-7 lg:grid-rows-{{ $numberOfWeeks }} lg:gap-px">
-                    @if ($monthStartDay > 1)
-                        @for ($i = 1; $i < $monthStartDay; $i++)
+                <div class="hidden w-full lg:grid lg:grid-cols-7 lg:grid-rows-5 lg:gap-px">
+                    @if ($monthStartDayNumber > 1)
+                        @for ($i = 1; $i < $monthStartDayNumber; $i++)
                             <div class="relative bg-gray-50 py-2 px-3 text-gray-500">
                                 <time></time>
                             </div>
                         @endfor
                     @endif
 
-                    @for ($i = 1; $i <= $numberOfDays; $i++)
+                    @for ($i = 1; $i <= $daysInMonth; $i++)
                         @php
                             $date = $year . '-' . $month . '-' . sprintf('%02d', $i);
                         @endphp
@@ -56,13 +56,6 @@
                         </div>
                     @endfor
 
-                    @if($monthEndingDay < 7)
-                        @for ($i = 1; $i <= $monthEndingDay; $i++)
-                            <div class="relative bg-gray-50 py-2 px-3 text-gray-500">
-                                <time></time>
-                            </div>
-                        @endfor
-                    @endif
                 </div>
             </div>
         </div>
